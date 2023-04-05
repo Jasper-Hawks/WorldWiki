@@ -1,0 +1,22 @@
+html{
+
+    overflow: hidden;
+
+}
+.backgroundImg{
+
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+
+}
+.createCont{
+
+    z-index: 2;
+    padding: 40vh 0;
+    text-align: center;
+
+}

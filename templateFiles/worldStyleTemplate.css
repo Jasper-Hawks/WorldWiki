@@ -1,0 +1,18 @@
+html{
+
+    font-family: Luminari;
+
+}
+@font-face {
+    font-family: 'Luminari';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Luminari'), url('../src/Luminari-Regular.woff') format('woff');
+}
+h1{
+
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+
+}
