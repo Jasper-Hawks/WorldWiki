@@ -55,9 +55,47 @@ async function openWorld(worldDirHandle){
 
     //Generate files and directories for the world
     entryDirHandle = await worldDirHandle.getDirectoryHandle("entries",{create: true});
+
+
+
     indexFileHandle = await worldDirHandle.getFileHandle(worldName + "Index.html",{create: true});
+    const writeFile = await indexFileHandle.createWritable();
+
+    await writeFile.write(`
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="worldStyleTemplate.css">
+    <title>New World Index Page</title>
+  </head>
+  <body>
+      <header>
+          <h1>Welcome to your world's index page</h1>
+          <hr>
+      </header>
+      <p>This is the index page of your world. You'll see all of your entires compiled into one place. Along with all the general data about your world.</p>
+  </body>
+</html>
 
 
+    `);
+
+    await writeFile.close();
+/*    async function writeFile(fileHandle, contents) {
+      // Create a FileSystemWritableFileStream to write to.
+      const writable = await fileHandle.createWritable();
+
+      // Write the contents of the file to the stream.
+      await writable.write(contents);
+
+      // Close the file and write the contents to disk.
+      await writable.close();
+    }
+    */
 
 
 }
